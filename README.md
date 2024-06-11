@@ -1,1 +1,1 @@
-SQL Case and Math aggrigate functions
+SQL Case and Math Aggregate functions
