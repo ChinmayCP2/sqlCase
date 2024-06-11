@@ -1,0 +1,33 @@
+select *,(case when price > 11 then 'Price is high'
+			else 'price is right' end) as Indication from products;
+
+select  
+	id,name, (case when name = any (select name from suppliergermany
+	where name ~ 'J')
+	then 'found' else 'not found' end) as stuff
+	from customers;
+
+select  
+	id,name,city, (case when city = any (select city from suppliergermany
+	where city = 'Berlin')
+	then 'found' else 'not found' end) as stuff
+	from customers;
+
+select *
+from employee
+order by (case when sal is null then 0 else sal end);
+
+select sum(coalesce(sal,0)), sum(sal) 
+from employee
+	where  (case when sal is null then 0
+	else 1 end) = 1;
+case can be used in where clause as a condition
+
+Alter table orders 
+add review INT as (case 
+                     when amount > 300 then "Good"
+                     when amount <=300 then "End"
+                     end);
+
+
+
