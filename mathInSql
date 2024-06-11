@@ -1,0 +1,20 @@
+select abs(-10);
+select ceil(9.1);
+select ceiling(2.1);
+select floor(2.4);
+select round(9.124, 2);
+select power(4,0.5);
+select power(4,5);
+select sqrt(4), sqrt(25);
+-- -- e^x 
+SELECT ROUND(EXP(4)::numeric, 2);
+
+select sqrt(power(2,4));
+select log(10);
+select log10(10);
+select log10(log(10));
+
+select * from customers
+where id = floor(random()*10);
+
+select * from customers;
